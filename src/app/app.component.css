@@ -1,3 +1,8 @@
-p {
-    color: red;
+.container {
+    margin: 0 auto;
+    width: 90%;
+}
+ 
+.to-do-list {
+    margin-top: 50px;
 }

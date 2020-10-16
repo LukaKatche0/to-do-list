@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoModel } from './models/to-do.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'to-do-list';
+  todos: Array<TodoModel> = [
+    new TodoModel(1, 'ძაღლის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი'),
+    new TodoModel(2, 'კატის გასეირნება', '7ზე უნდა გავასეირნო ტოტო'),
+  ];
+  disabled = false;
+  todo1 = new TodoModel(1, 'ძაღლის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი');
+  todo2 = new TodoModel(2, 'კატის გასეირნება', '7ზე უნდა გავასეირნო ტოტო');
 }
