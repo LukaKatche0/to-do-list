@@ -11,7 +11,9 @@ export class AppComponent {
     new TodoModel(1, 'ძაღლის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი'),
     new TodoModel(2, 'კატის გასეირნება', '7ზე უნდა გავასეირნო ტოტო'),
   ];
-  disabled = false;
-  todo1 = new TodoModel(1, 'ძაღლის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი');
-  todo2 = new TodoModel(2, 'კატის გასეირნება', '7ზე უნდა გავასეირნო ტოტო');
+  disabled: boolean = false;
+  counter: number = 0;
+  onCounterEntered(event) {
+    this.counter = event;
+  }
 }

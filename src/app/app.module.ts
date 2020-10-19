@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ToDoComponent } from './to-do/to-do.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ToDoComponent,
-    CustomInputComponent
+    CustomInputComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule

@@ -1,13 +1,11 @@
 <div class="container">
     <div class="to-do-list">
-        <app-to-do [todo]="todos[0]"></app-to-do>
-        <app-to-do [todo]="todos[1]"></app-to-do>
-        <app-custom-input [disabledProp]="disabled"></app-custom-input>
-        <button (click)="disabled = !disabled">toggle disabled</button>
+        <!-- <app-to-do [todo]="todos[0]"></app-to-do>
+        <app-to-do [todo]="todos[1]"></app-to-do> -->
+        <!-- <app-custom-input [disabledProp]="disabled"></app-custom-input>
+        <button (click)="disabled = !disabled">toggle disabled</button> -->
     </div>
+    <p>Parent Counter {{counter}}</p>
+    <button (click)="counter = counter + 1">Parent Button</button>
+    <app-counter [counterStartValue]="counter" (counterChanged)="counter = counter + 1" (counterEntered)="onCounterEntered($event)"></app-counter>
 </div>
-
-<!-- <input type="text"> -->
-
-შევქმნათ ახალი კომპონენტი app-custom-input, რომელსაც @input-ით გადაეცემა ფროფერთი disabled, თუ true არის ეს ფროფერთი, html-ის input იყოს disabled. გამოვიყენოთ ეს app-custom-input კოპმონენტი app-component-ში და იქიდან გადავცეთ disabled.
-ექსტრა: შევქმნათ button app component-ში, რომლის დაჭერაზეც disabled-ს შეეცვლება მნიშვნელობა.
