@@ -2,10 +2,23 @@
     <div class="to-do-list">
         <!-- <app-to-do [todo]="todos[0]"></app-to-do>
         <app-to-do [todo]="todos[1]"></app-to-do> -->
+        {{todos.length}}
+        <button (click)="addTodo()">Add Todo</button>
+        <app-to-do *ngFor="let todoFromArray of todos" [todo]="todoFromArray" (deleted)="onTodoDeleted($event)"></app-to-do>
+        <!-- <div *ngFor="let number of numbersArr"> -->
+            <!-- ეს სპანი ჩანდეს მხოლოდ მაშინ თუ რიცხვი ლუწია -->
+            <!-- <span>{{number}}</span>
+        </div> -->
+        <!-- <button (click)="showEven = true; showAll = false;">Show Even</button>
+        <button (click)="showEven = false; showAll = false;">Show Odd</button>
+        <button (click)="showAll = true">Show All</button> -->
         <!-- <app-custom-input [disabledProp]="disabled"></app-custom-input>
         <button (click)="disabled = !disabled">toggle disabled</button> -->
     </div>
-    <p>Parent Counter {{counter}}</p>
+    <!-- <p>Parent Counter {{counter}}</p>
     <button (click)="counter = counter + 1">Parent Button</button>
-    <app-counter [counterStartValue]="counter" (counterChanged)="counter = counter + 1" (counterEntered)="onCounterEntered($event)"></app-counter>
+    <app-counter [counterStartValue]="counter" (counterChanged)="counter = counter + 1" (counterEntered)="onCounterEntered($event)"></app-counter> -->
+    <!-- <div *ngIf="showMessage">HELLO WORLD</div>
+    <div [hidden]="!showMessage">HELLO WORLD</div>
+    <button (click)="showMessage = !showMessage">Change showMessage</button> -->
 </div>
