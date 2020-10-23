@@ -4,7 +4,7 @@ export class TodoModel {
     description: string;
     // completed: boolean = false;
     completed: boolean;
-    constructor(id: number, title: string, description: string) {
+    constructor(id, title: string, description: string) {
         this.id = id;
         this.title = title;
         this.description = description;

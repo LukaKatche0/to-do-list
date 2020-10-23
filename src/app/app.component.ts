@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoModel } from './models/to-do.model';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  todos: Array<TodoModel> = [
-    new TodoModel(1, 'ძაღლის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი'),
-    new TodoModel(2, 'კატის გასეირნება', '7ზე უნდა გავასეირნო ტოტო'),
-  ];
+export class AppComponent implements OnInit {
+  constructor(private todoService: TodoService){
+
+  }
+
+  todos: Array<TodoModel> = [];
   showEven: boolean = false;
   showAll: boolean = false;
   numbers: Array<number> = [1, 2, 6, 3, 5, 7];
@@ -20,17 +22,34 @@ export class AppComponent {
   //   this.counter = event;
   // }
 
-  addTodo() {
-    const newTodo = new TodoModel(3, 'ენოტის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი');
-    this.todos.push(newTodo);
+  ngOnInit() {
+    // ვწერთ ისეთ ლოგიკას, რომელიც გვინდა განხორციელდეს კომპონენტის ინიციალიზაციის დროს
+    // სერვერიდან წამოვიღოთ todo-ების ლისტი და შემდეგ გამოვაჩინოთ
+    // სერვისის შექმნა - ng g s {{სახელი}}
+    this.todoService.getTodos()
+    .subscribe((data) => {
+      this.todos = data;
+    });
   }
 
-  onTodoDeleted(id: number) {
-    const todo = this.todos.find((todo) => {
-      return todo.id === id;
+  addTodo() {
+    const newTodo = new TodoModel(undefined, 'ენოტის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი');
+    this.todoService.addTodo(newTodo)
+    .subscribe((data) => {
+      newTodo.id = data.id;
+      this.todos.push(newTodo);
+    })
+  }
+
+  onTodoDeleted(id: number | string) {
+    this.todoService.deleteTodo(id)
+    .subscribe(() => {
+      const todo = this.todos.find((todo) => {
+        return todo.id === id;
+      });
+      const index = this.todos.indexOf(todo);
+      this.todos.splice(index, 1);
     });
-    const index = this.todos.indexOf(todo);
-    this.todos.splice(index, 1);
   }
 
   get numbersArr() {
