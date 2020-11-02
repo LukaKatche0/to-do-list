@@ -1,28 +1,10 @@
 {
   "todos": [
     {
-      "title": "ენოტის გასეირნება",
-      "description": "7ზე უნდა გავასეირნო ჩარლი",
+      "title": "asadsd123345",
+      "description": "321",
       "completed": false,
       "id": 1
-    },
-    {
-      "title": "ენოტის გასეირნება",
-      "description": "7ზე უნდა გავასეირნო ჩარლი",
-      "completed": false,
-      "id": 2
-    },
-    {
-      "title": "ენოტის გასეირნება",
-      "description": "7ზე უნდა გავასეირნო ჩარლი",
-      "completed": false,
-      "id": 3
-    },
-    {
-      "title": "ენოტის გასეირნება",
-      "description": "7ზე უნდა გავასეირნო ჩარლი",
-      "completed": false,
-      "id": 4
     }
   ]
 }

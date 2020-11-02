@@ -16,6 +16,8 @@ export class AppComponent implements OnInit {
   showEven: boolean = false;
   showAll: boolean = false;
   numbers: Array<number> = [1, 2, 6, 3, 5, 7];
+  newTodoTitle: string;
+  newTodoDescription: string;
   // disabled: boolean = false;
   // counter: number = 0;
   // onCounterEntered(event) {
@@ -33,9 +35,12 @@ export class AppComponent implements OnInit {
   }
 
   addTodo() {
-    const newTodo = new TodoModel(undefined, 'ენოტის გასეირნება', '7ზე უნდა გავასეირნო ჩარლი');
+      // 2) თუ რომელიმე ინფუთი ცარიელია მაშინ ამოვაგდოთ ალერტი და არ გავაგრძელოთ
+      // ამ ფუნქციის შესრულება
+    const newTodo = new TodoModel(undefined, this.newTodoTitle, this.newTodoDescription);
     this.todoService.addTodo(newTodo)
     .subscribe((data) => {
+      // 1) გასუფთავდეს ორივე input-ი
       newTodo.id = data.id;
       this.todos.push(newTodo);
     })

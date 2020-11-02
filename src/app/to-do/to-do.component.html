@@ -1,5 +1,12 @@
 <div class="to-do">
-    <h4>{{todo.title}}</h4>
-    <p>{{todo.description}}</p>
+    <div *ngIf="!isInEditMode">
+        <h4>{{todo.title}}</h4>
+        <p>{{todo.description}}</p>
+    </div>
+    <div *ngIf="isInEditMode">
+        <input type="text" [(ngModel)]="todo.title">
+        <input type="text" [(ngModel)]="todo.description">
+    </div>
     <button (click)="deleteTodo()">Delete Todo</button>
+    <button (click)="editTodo()">{{editBtnTitle}}</button>
 </div>

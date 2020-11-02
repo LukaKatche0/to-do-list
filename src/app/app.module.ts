@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { ToDoComponent } from './to-do/to-do.component';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CounterComponent } from './counter/counter.component';
+import { NgModelTestComponent } from './ng-model-test/ng-model-test.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { CounterComponent } from './counter/counter.component';
     HeaderComponent,
     ToDoComponent,
     CustomInputComponent,
-    CounterComponent
+    CounterComponent,
+    NgModelTestComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
