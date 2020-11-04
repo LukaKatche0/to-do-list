@@ -1,0 +1,23 @@
+<form (ngSubmit)="submitUserForm(userForm)" #userForm="ngForm" style="margin: 50px 50px;">
+    <div>
+        <input type="text" placeholder="username"
+        name="username"
+        ngModel
+        style="padding: 8px;"
+        minlength="6"
+        #username="ngModel"
+        required>
+    </div>
+    <!-- <span *ngIf="userForm && userForm.controls.username && userForm.controls.username.touched && userForm.controls.username.errors && userForm.controls.username.errors.minlength">you have to enter {{userForm.controls.username.errors.minlength.requiredLength}} characters, you've only entered {{userForm.controls.username.errors.minlength.actualLength}}</span> -->
+    <span *ngIf="username && username.errors && username.errors.minlength">
+        you have to enter {{username.errors.minlength.requiredLength}} characters, you've only entered {{username.errors.minlength.actualLength}}
+    </span>
+    <div style="margin-top: 5px;">
+        <input type="password" placeholder="password"
+        name="password"
+        style="padding: 8px;"
+        ngModel
+        required>
+    </div>
+    <button type="submit">Log In</button>
+</form>

@@ -3,10 +3,10 @@
         <!-- <app-to-do [todo]="todos[0]"></app-to-do>
         <app-to-do [todo]="todos[1]"></app-to-do> -->
         <!-- {{todos.length}} -->
-        <input type="text" placeholder="todo title" [(ngModel)]="newTodoTitle">
+        <!-- <input type="text" placeholder="todo title" [(ngModel)]="newTodoTitle">
         <input type="text" placeholder="todo description" [(ngModel)]="newTodoDescription">
         <button (click)="addTodo()">Add Todo</button>
-        <app-to-do *ngFor="let todoFromArray of todos" [todo]="todoFromArray" (deleted)="onTodoDeleted($event)"></app-to-do>
+        <app-to-do *ngFor="let todoFromArray of todos" [todo]="todoFromArray" (deleted)="onTodoDeleted($event)"></app-to-do> -->
         <!-- <div *ngFor="let number of numbersArr"> -->
             <!-- ეს სპანი ჩანდეს მხოლოდ მაშინ თუ რიცხვი ლუწია -->
             <!-- <span>{{number}}</span>
@@ -25,6 +25,5 @@
     <button (click)="showMessage = !showMessage">Change showMessage</button> -->
 </div>
 <!-- <app-ng-model-test></app-ng-model-test> -->
-
-// 1 button ჩავამატოთ todo კომპონენტში, როდესაც დავაწვებით todo-ს completed გახდეს true,
-// ასევე გაიგზავნოს edit-ის რექვესთი და გადაიხაზოს title და description
+<app-template-variables-test></app-template-variables-test>
+<app-user-form-test></app-user-form-test>

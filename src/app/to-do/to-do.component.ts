@@ -37,7 +37,6 @@ export class ToDoComponent implements OnInit {
     }
     this.isInEditMode = !this.isInEditMode;
     // თუ არის editMode-ში, აქვე გამოიძახეთ edit-ის ფუნქცია ბექში, ჩვენი todoService-ის გამოყენებით
-    
   }
 
 }

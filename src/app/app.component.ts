@@ -28,10 +28,10 @@ export class AppComponent implements OnInit {
     // ვწერთ ისეთ ლოგიკას, რომელიც გვინდა განხორციელდეს კომპონენტის ინიციალიზაციის დროს
     // სერვერიდან წამოვიღოთ todo-ების ლისტი და შემდეგ გამოვაჩინოთ
     // სერვისის შექმნა - ng g s {{სახელი}}
-    this.todoService.getTodos()
-    .subscribe((data) => {
-      this.todos = data;
-    });
+    // this.todoService.getTodos()
+    // .subscribe((data) => {
+    //   this.todos = data;
+    // });
   }
 
   addTodo() {

@@ -9,6 +9,8 @@ import { CustomInputComponent } from './custom-input/custom-input.component';
 import { CounterComponent } from './counter/counter.component';
 import { NgModelTestComponent } from './ng-model-test/ng-model-test.component';
 import { FormsModule } from '@angular/forms';
+import { TemplateVariablesTestComponent } from './template-variables-test/template-variables-test.component';
+import { UserFormTestComponent } from './user-form-test/user-form-test.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     ToDoComponent,
     CustomInputComponent,
     CounterComponent,
-    NgModelTestComponent
+    NgModelTestComponent,
+    TemplateVariablesTestComponent,
+    UserFormTestComponent
   ],
   imports: [
     BrowserModule,
